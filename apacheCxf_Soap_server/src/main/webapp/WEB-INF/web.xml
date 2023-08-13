@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- Configure the CXFServlet -->
+    <servlet>
+        <servlet-name>CXFServlet</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <!-- Map the CXFServlet to a specific URL pattern -->
+    <servlet-mapping>
+        <servlet-name>CXFServlet</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Specify the location of the CXF configuration file -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/cxf-servlet.xml</param-value>
+    </context-param>
+
+    <!-- Listener for CXF initialization -->
+<!--     <listener> -->
+<!--         <listener-class>org.apache.cxf.transport.servlet.CXFServletContextListener</listener-class> -->
+<!--     </listener> -->
+
+    <!-- Other web.xml configurations -->
+
+</web-app>
