@@ -2,57 +2,78 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com</groupId>
+	<groupId>idv</groupId>
 	<artifactId>apacheCxf</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<dependencies>
-		<!-- spring -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>6.0.11</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>6.0.11</version>
-		</dependency>
-		<!-- Spring Web -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>6.0.11</version> <!-- Use the appropriate version -->
-		</dependency>
+	<version>1.0</version>
+	<packaging>jar</packaging>
 
-		<!-- Spring Web MVC -->
+	<dependencies>
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>6.0.11</version> <!-- Use the appropriate version -->
-		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
-		<dependency>
-			<groupId>jakarta.servlet</groupId>
-			<artifactId>jakarta.servlet-api</artifactId>
-			<version>6.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- Apache CXF core libraries -->
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-core</artifactId>
-			<version>4.0.2</version> <!-- Use the latest version -->
+		  <groupId>org.apache.cxf</groupId>
+		  <artifactId>cxf-rt-frontend-jaxws</artifactId>
+		  <version>4.0.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>4.0.2</version> <!-- Use the latest version -->
+		  <groupId>org.apache.cxf</groupId>
+		  <artifactId>cxf-rt-transports-http</artifactId>
+		  <version>4.0.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>4.0.2</version> <!-- Use the latest version -->
+		  <groupId>org.apache.cxf</groupId>
+		  <artifactId>cxf-rt-transports-http-jetty</artifactId>
+		  <version>3.4.0</version>
+		</dependency>
+		<!-- cxf jakarta-->
+		<!-- https://mvnrepository.com/artifact/com.sun.activation/jakarta.activation -->
+<!--<dependency>-->
+<!--    <groupId>com.sun.activation</groupId>-->
+<!--    <artifactId>jakarta.activation</artifactId>-->
+<!--    <version>2.0.1</version>-->
+<!--</dependency>-->
+<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+<!--<dependency>-->
+<!--    <groupId>jakarta.servlet</groupId>-->
+<!--    <artifactId>jakarta.servlet-api</artifactId>-->
+<!--    <version>6.0.0</version>-->
+<!--    <scope>provided</scope>-->
+<!--</dependency>-->
+<!-- https://mvnrepository.com/artifact/jakarta.xml.soap/jakarta.xml.soap-api -->
+<!--<dependency>-->
+<!--    <groupId>jakarta.xml.soap</groupId>-->
+<!--    <artifactId>jakarta.xml.soap-api</artifactId>-->
+<!--    <version>3.0.0</version>-->
+<!--</dependency>-->
+<!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
+<!--<dependency>-->
+<!--    <groupId>jakarta.xml.bind</groupId>-->
+<!--    <artifactId>jakarta.xml.bind-api</artifactId>-->
+<!--    <version>4.0.0</version>-->
+<!--</dependency>-->
+<!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
+<!--<dependency>-->
+<!--    <groupId>jakarta.xml.bind</groupId>-->
+<!--    <artifactId>jakarta.xml.bind-api</artifactId>-->
+<!--    <version>4.0.0</version>-->
+<!--</dependency>-->
+<!-- https://mvnrepository.com/artifact/jakarta.xml.ws/jakarta.xml.ws-api -->
+<dependency>
+    <groupId>jakarta.xml.ws</groupId>
+    <artifactId>jakarta.xml.ws-api</artifactId>
+    <version>4.0.0</version>
+</dependency>
+
+		<!-- cxf jakarta-->
+		<!-- spring-->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-web</artifactId>
+		  <version>6.0.11</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-context</artifactId>
+		  <version>6.0.11</version>
 		</dependency>
 	</dependencies>
 </project>
+

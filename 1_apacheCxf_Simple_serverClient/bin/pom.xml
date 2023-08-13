@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>idv</groupId>
+	<artifactId>apacheCxf</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+		<!-- Apache CXF core libraries -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>4.0.2</version> <!-- Use the latest version -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>4.0.2</version> <!-- Use the latest version -->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>4.0.2</version> <!-- Use the latest version -->
+		</dependency>
+		<dependency>
+			<groupId>jakarta.xml.ws</groupId>
+			<artifactId>jakarta.xml.ws-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+		<!--https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-features-logging -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-features-logging</artifactId>
+			<version>4.0.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Servlet container (Tomcat) -->
+<!--		<dependency>-->
+<!--			<groupId>org.apache.tomcat</groupId>-->
+<!--			<artifactId>tomcat-servlet-api</artifactId>-->
+<!--			<version>9.0.54</version>  Use the version compatible with-->
+<!--				your Tomcat installation -->
+<!--			<scope>provided</scope>  Provided scope, as it will be-->
+<!--				provided by the container -->
+<!--		</dependency>-->
+	</dependencies>
+</project>
