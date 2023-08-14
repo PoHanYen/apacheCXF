@@ -5,8 +5,9 @@
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
-    <import resource="classpath:META-INF/cxf/cxf.xml"/>
-    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+<!-- <import resource="classpath*:META-INF/cxf/cxf.xml"/> -->
+<!-- <import resource="classpath*:META-INF/cxf/cxf-extension-xml.xml"/> -->
+<!-- <import resource="classpath*:META-INF/cxf/cxf-servlet.xml"/> -->
     
     <jaxws:endpoint id="rmsEngineService" implementor="com.example.service.CxfDemoServiceImpl" address="/CxfDemoService"/>
 </beans>

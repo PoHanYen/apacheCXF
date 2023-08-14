@@ -24,43 +24,28 @@
 		  <version>3.4.0</version>
 		</dependency>
 		<!-- cxf jakarta-->
-		<!-- https://mvnrepository.com/artifact/com.sun.activation/jakarta.activation -->
-<!--<dependency>-->
-<!--    <groupId>com.sun.activation</groupId>-->
-<!--    <artifactId>jakarta.activation</artifactId>-->
-<!--    <version>2.0.1</version>-->
-<!--</dependency>-->
-<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
-<!--<dependency>-->
-<!--    <groupId>jakarta.servlet</groupId>-->
-<!--    <artifactId>jakarta.servlet-api</artifactId>-->
-<!--    <version>6.0.0</version>-->
-<!--    <scope>provided</scope>-->
-<!--</dependency>-->
-<!-- https://mvnrepository.com/artifact/jakarta.xml.soap/jakarta.xml.soap-api -->
-<!--<dependency>-->
-<!--    <groupId>jakarta.xml.soap</groupId>-->
-<!--    <artifactId>jakarta.xml.soap-api</artifactId>-->
-<!--    <version>3.0.0</version>-->
-<!--</dependency>-->
-<!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
-<!--<dependency>-->
-<!--    <groupId>jakarta.xml.bind</groupId>-->
-<!--    <artifactId>jakarta.xml.bind-api</artifactId>-->
-<!--    <version>4.0.0</version>-->
-<!--</dependency>-->
-<!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
-<!--<dependency>-->
-<!--    <groupId>jakarta.xml.bind</groupId>-->
-<!--    <artifactId>jakarta.xml.bind-api</artifactId>-->
-<!--    <version>4.0.0</version>-->
-<!--</dependency>-->
-<!-- https://mvnrepository.com/artifact/jakarta.xml.ws/jakarta.xml.ws-api -->
-<dependency>
-    <groupId>jakarta.xml.ws</groupId>
-    <artifactId>jakarta.xml.ws-api</artifactId>
-    <version>4.0.0</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+		<dependency>
+		    <groupId>jakarta.annotation</groupId>
+		    <artifactId>jakarta.annotation-api</artifactId>
+		    <version>2.1.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>jakarta.xml.ws</groupId>
+		    <artifactId>jakarta.xml.ws-api</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>jakarta.xml.soap</groupId>
+		    <artifactId>jakarta.xml.soap-api</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>jakarta.servlet</groupId>
+		    <artifactId>jakarta.servlet-api</artifactId>
+		    <version>6.0.0</version>
+		    <scope>provided</scope>
+		</dependency>
 
 		<!-- cxf jakarta-->
 		<!-- spring-->

@@ -9,7 +9,7 @@ public class Server{
 		svrFactory.setServiceClass(CxfDemoService.class);
 		svrFactory.setAddress("http://localhost:9000/CxfDemoService");
 		svrFactory.setServiceBean(implementor);
-//		svrFactory.getFeatures().add(new LoggingFeature());
+		svrFactory.getFeatures().add(new LoggingFeature());
 		svrFactory.create();
 	}
 }
