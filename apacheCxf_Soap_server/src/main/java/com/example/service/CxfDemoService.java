@@ -2,8 +2,10 @@ package com.example.service;
 
 import javax.jws.WebService;
 
+import com.example.bean.Person;
+
 @WebService
 public interface CxfDemoService{
-	String hello(String name);
-	String sayGoodBye(String name);
+	public String insert(Person person);
+	public String update(Person person);
 }
