@@ -8,13 +8,13 @@ import jakarta.jws.WebService;
 @WebService(targetNamespace="http://service.example.com/")
 public class CxfDemoServiceImpl implements CxfDemoService{
 	@Override
-	public String insert(@WebParam(name="person")Person person){
+	public Person insert(@WebParam(name="Person")Person person){
 		System.out.println(person);
-		return "hello";
+		return person;
 	}
 	@Override
-	public String update(@WebParam(name="person")Person person){
+	public Person update(@WebParam(name="Person")Person person){
 		System.out.println(person);
-		return "hello";
+		return person;
 	}
 }
