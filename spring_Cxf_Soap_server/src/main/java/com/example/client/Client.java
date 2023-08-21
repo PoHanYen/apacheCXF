@@ -12,7 +12,7 @@ public class Client{
 	public static void main(String[] args) throws Exception{
 		JaxWsProxyFactoryBean factory=new JaxWsProxyFactoryBean();
 		factory.getFeatures().add(new LoggingFeature());
-		factory.setAddress("http://localhost:8081/spring_Cxf_Soap_server/cxf/CxfDemoService");
+		factory.setAddress("http://localhost:8080/spring_Cxf_Soap_server/cxf/CxfDemoService");
 		CxfDemoService client=factory.create(CxfDemoService.class);
 		Person p = new Person();
 		p.setName("haha");

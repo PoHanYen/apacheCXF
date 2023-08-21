@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.example.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.example.com" xmlns:intf="http://service.example.com" xmlns:tns1="http://bean.example.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.example.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://bean.example.com"/>
+   <element name="update">
+    <complexType>
+     <sequence>
+      <element name="person" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateResponse">
+    <complexType>
+     <sequence>
+      <element name="updateReturn" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insert">
+    <complexType>
+     <sequence>
+      <element name="person" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertResponse">
+    <complexType>
+     <sequence>
+      <element name="insertReturn" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://bean.example.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Person">
+    <sequence>
+     <element name="age" nillable="true" type="xsd:int"/>
+     <element name="gender" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insertRequest">
+
+      <wsdl:part element="impl:insert" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRequest">
+
+      <wsdl:part element="impl:update" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateResponse">
+
+      <wsdl:part element="impl:updateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertResponse">
+
+      <wsdl:part element="impl:insertResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CxfDemoServiceImpl">
+
+      <wsdl:operation name="update">
+
+         <wsdl:input message="impl:updateRequest" name="updateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateResponse" name="updateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insert">
+
+         <wsdl:input message="impl:insertRequest" name="insertRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertResponse" name="insertResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CxfDemoServiceImplSoapBinding" type="impl:CxfDemoServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="update">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insert">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CxfDemoServiceImplService">
+
+      <wsdl:port binding="impl:CxfDemoServiceImplSoapBinding" name="CxfDemoServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/spring_Cxf_Soap_server/services/CxfDemoServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
