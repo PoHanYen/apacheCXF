@@ -5,3 +5,13 @@ log/
 target/
 Servers/
 .metadata/
+
+# Ignore miscellaneous files
+*.log
+*.tmp
+
+# Ignore NetBrain generated files and folders
+/netbrain_generated_folder/
+
+# Ignore IntelliJ IDEA generated files
+.idea/

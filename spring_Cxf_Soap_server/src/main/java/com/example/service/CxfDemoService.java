@@ -6,10 +6,8 @@ import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import jakarta.jws.WebService;
 
-@WebService
+@WebService(targetNamespace="http://service.example.com/")
 public interface CxfDemoService{
-	@WebMethod(operationName="insert")
-	public Person insert(@WebParam(name="Person") Person person);
-	@WebMethod(operationName="update")
-	public Person update(@WebParam(name="Person") Person person);
+	public Person insert(@WebParam(name="Person")Person person);
+	public Person update(@WebParam(name="Person")Person person);
 }
