@@ -21,18 +21,21 @@ public class Person implements Serializable{
 	public String getName(){
 		return name;
 	}
+//	@XmlTransient
 	public void setName(String name){
 		this.name=name;
 	}
 	public String getGender(){
 		return gender;
 	}
+//	@XmlTransient
 	public void setGender(String gender){
 		this.gender=gender;
 	}
 	public Integer getAge(){
 		return age;
 	}
+//	@XmlTransient
 	public void setAge(Integer age){
 		this.age=age;
 	}

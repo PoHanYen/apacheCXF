@@ -5,9 +5,8 @@ import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 import com.example.server.HelloWorld;
 
+@SuppressWarnings("deprecation")
 public class Client{
-	private Client(){
-	}
 	public static void main(String[] args) throws Exception{
         JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
         factory.getFeatures().add(new LoggingFeature());

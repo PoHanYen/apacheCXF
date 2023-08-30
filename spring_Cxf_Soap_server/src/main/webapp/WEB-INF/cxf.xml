@@ -6,3 +6,4 @@
        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">    
     <jaxws:endpoint id="CxfDemoServiceImpl" implementor="com.example.service.CxfDemoServiceImpl" address="/CxfDemoService"/>
 </beans>
+
