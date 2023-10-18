@@ -3,7 +3,7 @@ package com.example.client;
 import org.apache.cxf.feature.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
-import com.example.service.CxfDemoService;
+import com.example.testService.CxfDemoService;
 import com.example.testService.Person;
 
 @SuppressWarnings("deprecation")
@@ -18,7 +18,7 @@ public class Client{
         p.setAge(22);
         p.setGender("female");
         client.update(p);
-        client.insert(p);
+//        client.insert(p);
 //        System.out.println(client.insert(p));
 	}
 }
