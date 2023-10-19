@@ -38,12 +38,12 @@
   <dependency>
    <groupId>jakarta.xml.ws</groupId>
    <artifactId>jakarta.xml.ws-api</artifactId>
-   <version>3.0.1</version>
+   <version>3.0.1</version> <!-- Use the latest version -->
   </dependency>
   <dependency>
    <groupId>org.apache.cxf</groupId>
    <artifactId>cxf-rt-transports-http-jetty</artifactId>
-   <version>4.0.2</version>
+   <version>4.0.2</version> <!-- Use the latest version -->
   </dependency>
 ```
 
@@ -509,3 +509,152 @@ Server return
 ```
 
 ## Rest Web Service
+
+- 實作傳輸物件
+  
+- 使用物件包裝傳輸資料需要使用到物件與XML互相轉換的工具xml.bind。
+  
+- @XmlAccessorType()用於指定object-xml binding透過方式執行，可選擇field,property, serialized。
+- @XmlRootElement()設定Object轉換成xml格式後的名稱，不指定則使用預設arg0。
+- @XmlElement設定Object轉換成xml格式後的欄位名稱，不指定則使用預設arg0。
+
+```java
+package com.example.bean;
+
+import java.io.Serializable;
+
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="Person")
+public class Person implements Serializable{
+	private static final long serialVersionUID=1L;
+	@XmlElement(name="Name")
+	private String name;
+	@XmlElement(name="Gender")
+	private String gender;
+	@XmlElement(name="Age")
+	private Integer age;
+
+	public String getName(){
+		return name;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public String getGender(){
+		return gender;
+	}
+	public void setGender(String gender){
+		this.gender=gender;
+	}
+	public Integer getAge(){
+		return age;
+	}
+	public void setAge(Integer age){
+		this.age=age;
+	}
+	@Override
+	public String toString(){
+		return "Person [name="+name+", gender="+gender+", age="+age+"]";
+	}
+}
+```
+
+### 創造interface
+
+```java
+package com.example.service;
+
+import com.example.bean.Person;
+
+import jakarta.jws.WebService;
+import jakarta.ws.rs.PathParam;
+
+public interface CxfDemoService{
+	public Person insert(Person person);
+	public Person update(Person person);
+	public String delete(Person person);
+	public Person query(String name);
+	public String hello();
+}
+```
+
+### 創造class實作interface
+
+- 依照restful風格去訂每個方法接收request的方式。比方說，使用@Get，該方法只能接受get方法過來的資料，使用@Post，該方法只能接受Post方法過來的資料。
+- @Produces設定Server 發送response給client時，是使用json or xml格式。
+- @Consumes設定Server 接收client request時，是使用json or xml格式。
+- @Produces & @Consumes 可以設定整個class的所有方法都是用指定資料格式，也可以單一指定某個方法。
+
+```java
+package com.example.service;
+
+import com.example.bean.Person;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+
+@Produces(MediaType.APPLICATION_JSON) // return response in json, can minimize scope to method
+@Consumes(MediaType.APPLICATION_JSON) // receive request in json, can minimize scope to method
+public class CxfDemoServiceImpl implements CxfDemoService{
+	@Override
+	@POST
+	@Path("/create")
+	public Person insert(Person person){
+		System.out.println(person);
+		return person;
+	}
+	@Override
+	@PUT
+	@Path("/update")
+	public Person update(Person person){
+		System.out.println(person);
+		return person;
+	}
+	@Override
+	@DELETE
+	@Path("/delete")
+	public String delete(Person person){
+		System.out.println(person);
+		ObjectWriter ow=new ObjectMapper().writer().withDefaultPrettyPrinter();
+		String json=null;
+		try{
+			json=ow.writeValueAsString(true);
+		}catch(JsonProcessingException e){
+			e.printStackTrace();
+		}
+		return json;
+	}
+	@Override
+	@GET
+	@Path("/query/{name}")
+	public Person query(@PathParam("name") String name){
+		Person person=new Person();
+		person.setName(name);
+		person.setGender("male");
+		person.setAge(18);
+		System.out.println(person);
+		return person;
+	}
+	@Override
+	@GET
+	@Path("/hello")
+	public String hello(){
+		return "helloWorld";
+	}
+}
+```
