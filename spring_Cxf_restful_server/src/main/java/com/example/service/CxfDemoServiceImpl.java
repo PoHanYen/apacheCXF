@@ -16,7 +16,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Produces(MediaType.APPLICATION_JSON) // return response in json, can minimize scope to method
-@Consumes(MediaType.APPLICATION_JSON) // receive request in json, can minimize scope to method
+@Consumes(MediaType.APPLICATION_XML) // receive request in json, can minimize scope to method
 public class CxfDemoServiceImpl implements CxfDemoService{
 	@Override
 	@POST
